@@ -1,0 +1,6 @@
+{
+  "name": "Dorry Hair Studio - Luxury Natural Hair & Beauty Salon Nairobi",
+  "description": "Premier luxury natural hair and beauty salon located at AppleWood Adams, Ngong Road, Nairobi. Specializing in natural hair care, protective styling, restorative treatments, and bespoke salon experiences.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,15 @@
+[
+  {
+    "bookingId": "DHS-MVNOYMKQ-367",
+    "name": "Amani Wanjiru",
+    "phone": "0728173197",
+    "email": "amani@example.com",
+    "serviceCategory": "Natural Hair Care",
+    "serviceName": "Hydrating Wash & Deep Conditioning Ritual",
+    "preferredDate": "2026-10-28",
+    "preferredTime": "10:00 AM",
+    "notes": "First time client",
+    "status": "Confirmed Request (Awaiting Salon Final Schedule Confirmation)",
+    "createdAt": "2026-10-25T10:35:10.922Z"
+  }
+]
