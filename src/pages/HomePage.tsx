@@ -61,25 +61,27 @@ export const HomePage: React.FC<HomePageProps> = ({
   return (
     <div className="w-full overflow-hidden">
       {/* 3. Luxury Hero Section */}
-      <section className="relative min-h-[85vh] lg:min-h-[92vh] flex items-center justify-center overflow-hidden">
-        {/* Background Image without green filter */}
+      <section className="relative bg-[#263522] min-h-[85vh] lg:min-h-[92vh] flex items-center justify-center overflow-hidden">
+        {/* Desktop Background Image - aligned to right where model is, with soft transparent gradient on left */}
         <div className="absolute inset-0 z-0">
           <img
             src="/images/hero1.png"
             alt="Dorry Hair Studio - Natural Hair Artistry Nairobi"
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover object-[75%_center] lg:object-right"
           />
-          {/* Transparent soft neutral gradient on left only for text contrast - NO green filter */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/20 to-transparent"></div>
+          {/* Subtle neutral gradient on desktop for text legibility, no green filter */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent hidden lg:block"></div>
+          {/* Mobile dark background overlay so text and mobile card are clear */}
+          <div className="absolute inset-0 bg-[#263522]/85 lg:hidden"></div>
         </div>
 
-        {/* Hero Content - Clean text directly on image without any green box container */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 w-full">
-          <div className="max-w-2xl lg:max-w-3xl space-y-6">
+        {/* Hero Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-28 w-full">
+          <div className="max-w-2xl lg:max-w-3xl space-y-5 lg:space-y-6">
             {/* Eyebrow */}
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-black/40 backdrop-blur-xs border border-[#C6A15B]/60 rounded-xs">
               <span className="w-2 h-2 rounded-full bg-[#C6A15B] animate-pulse"></span>
-              <span className="text-[11px] sm:text-xs font-semibold tracking-[0.25em] uppercase text-[#D9BD83] drop-shadow-sm">
+              <span className="text-[11px] sm:text-xs font-semibold tracking-[0.25em] uppercase text-[#D9BD83]">
                 Your Natural Beauty, Elevated
               </span>
             </div>
@@ -93,6 +95,29 @@ export const HomePage: React.FC<HomePageProps> = ({
 
             {/* Subtle Gold Divider */}
             <div className="w-20 h-0.5 bg-[#C6A15B]"></div>
+
+            {/* Prominently Visible Hero Image on Mobile View */}
+            <div className="block lg:hidden my-5 rounded-sm overflow-hidden shadow-2xl border border-[#C6A15B]/40 relative aspect-[16/11] bg-[#1a2517]">
+              <img
+                src="/images/hero1.png"
+                alt="Dorry Hair Studio - Natural Hair Artistry Nairobi"
+                className="w-full h-full object-cover object-[75%_center]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent"></div>
+              <div className="absolute bottom-3 left-3 right-3 text-white flex items-end justify-between">
+                <div>
+                  <span className="text-[10px] tracking-widest uppercase text-[#D9BD83] font-semibold block">
+                    Dorry Hair Studio • Nairobi
+                  </span>
+                  <p className="font-serif text-sm font-medium">
+                    Natural Hair Artistry &amp; Crown Care
+                  </p>
+                </div>
+                <span className="text-[10px] uppercase font-semibold text-[#24251F] bg-[#C6A15B] px-2 py-0.5 rounded-xs">
+                  AppleWood Adams
+                </span>
+              </div>
+            </div>
 
             {/* Supporting Text */}
             <p className="text-base sm:text-lg text-[#F8F5EE] font-light leading-relaxed max-w-xl drop-shadow-[0_1px_4px_rgba(0,0,0,0.7)]">
@@ -605,12 +630,9 @@ export const HomePage: React.FC<HomePageProps> = ({
                 <div className="flex items-start gap-3">
                   <Phone className="w-5 h-5 text-[#C6A15B] shrink-0 mt-0.5" />
                   <div>
-                    <strong className="block text-[#263522]">Phone Contacts</strong>
+                    <strong className="block text-[#263522]">Phone Contact</strong>
                     <a href={`tel:${SALON_INFO.phonePrimary.replace(/\s+/g, '')}`} className="text-[#263522] hover:text-[#C6A15B] block font-medium">
                       {SALON_INFO.phonePrimary}
-                    </a>
-                    <a href={`tel:${SALON_INFO.phoneSecondary.replace(/\s+/g, '')}`} className="text-[#263522] hover:text-[#C6A15B] block">
-                      {SALON_INFO.phoneSecondary}
                     </a>
                   </div>
                 </div>

@@ -1,0 +1,28 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Direct API endpoints to PHP handlers for Hostinger / Apache hosting
+  RewriteRule ^api/bookings/?$ /api/bookings/index.php [L,QSA]
+  RewriteRule ^api/contact/?$ /api/contact/index.php [L,QSA]
+
+  # Serve existing files and directories directly
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # All other routes point to index.html for Single Page Application client routing
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+# Ensure mobile browsers do not cache index.html indefinitely
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </FilesMatch>
+  <FilesMatch "\.(js|css|png|jpg|jpeg|gif|ico|svg|webp|woff|woff2)$">
+    Header set Cache-Control "max-age=31536000, public"
+  </FilesMatch>
+</IfModule>

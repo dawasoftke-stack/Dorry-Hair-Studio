@@ -9,7 +9,6 @@ export const SALON_INFO = {
   addressShort: 'AppleWood Adams, Ngong Rd, Nairobi',
   phonePrimary: '+254 728 173 197',
   phoneDisplay: '0728 173 197',
-  phoneSecondary: '+254 797 679 101',
   email: 'dorryhairstudio@gmail.com',
   whatsappNumber: '254728173197',
   promotionText: 'Special Offer: 15% Off for New Clients — Book Your Luxury Natural Hair Experience',
